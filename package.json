@@ -1,0 +1,15 @@
+{
+  "name": "ai-service",
+  "version": "1.0.0",
+  "description": "AI service with lead qualification, ticket classification, email drafting, and data extraction",
+  "main": "AIService.js",
+  "type": "module",
+  "scripts": {
+    "demo": "node demo.js"
+  },
+  "dependencies": {
+    "brew": "^0.0.8",
+    "dotenv": "^16.4.7",
+    "openai": "^4.104.0"
+  }
+}
