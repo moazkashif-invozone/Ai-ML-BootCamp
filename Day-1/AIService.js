@@ -1,16 +1,13 @@
 import OpenAI from "openai";
 
-const DEFAULT_MODEL = process.env.GROK_MODEL || process.env.XAI_MODEL || process.env.GROQ_MODEL || "llama-3.1-8b-instant";
-const DEFAULT_BASE_URL = process.env.GROK_BASE_URL || process.env.XAI_BASE_URL || process.env.GROQ_BASE_URL || "https://api.groq.com/openai/v1";
-
 export class AIService {
   constructor(
-    apiKey = process.env.GROK_API_KEY || process.env.XAI_API_KEY || process.env.OPENAI_API_KEY,
-    model = DEFAULT_MODEL,
-    baseURL = DEFAULT_BASE_URL
+    apiKey = process.env.GROQ_API_KEY || process.env.GROK_API_KEY || process.env.XAI_API_KEY || process.env.OPENAI_API_KEY,
+    model = process.env.GROQ_MODEL || process.env.GROK_MODEL || process.env.XAI_MODEL || "llama-3.1-8b-instant",
+    baseURL = process.env.GROQ_BASE_URL || process.env.GROK_BASE_URL || process.env.XAI_BASE_URL || "https://api.groq.com/openai/v1"
   ) {
     if (!apiKey) {
-      throw new Error("GROK_API_KEY, XAI_API_KEY, or OPENAI_API_KEY is required");
+      throw new Error("GROQ_API_KEY, GROK_API_KEY, XAI_API_KEY, or OPENAI_API_KEY is required");
     }
 
     this.client = new OpenAI({ apiKey, baseURL });

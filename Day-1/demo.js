@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
-import AIService from "./AIService.js";
 
 dotenv.config();
 dotenv.config({ path: ".env.example", override: false });
+
+import { AIService } from "./AIService.js";
 
 const ai = new AIService();
 
